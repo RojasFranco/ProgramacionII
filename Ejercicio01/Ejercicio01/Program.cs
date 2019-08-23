@@ -17,7 +17,7 @@ namespace Ejercicio01
 
             for(int i=0; i<5; i++)
             {
-                Console.Writeline("Ingrese un nro:");
+                Console.WriteLine("Ingrese un nro:");
                 numero = Convert.ToInt32(Console.ReadLine());
 
                 if(i==0)
