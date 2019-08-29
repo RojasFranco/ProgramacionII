@@ -1,0 +1,39 @@
+1) ¿Qué es el CLR? 
+ Entorno de ejecucion. Administra memoria.
+
+2) Describa el proceso de compilación de C#.
+ 1º Compila a lenguaje intermedio(compilacion). p.ej: Bytecode,IL, MSIL, CIL
+ y luego CRL interpreta y lo pasa a lenguaje maquina (ejecucion)
+
+3) ¿Qué es el CTS?
+ Common type system - Serie de bibliotecas que tiene los tipos de datos BASE de net Framework de net
+
+4) ¿Qué es un tipo por referencia (Reference Type)? ¿En qué se
+diferencia de un tipo por valor (Value Type)?
+ Tiporefencia:guarda referencia al valor en memoria. Es modificable
+ TipoValor: guarda el calor. No es modificable(Solo lo es en el scout de la funcion)
+
+5) Explique las diferencias entre variables escalares y no
+escalares.
+ No escalares: tiene mas de un dato, o esta compuesto por mas de un elemento.
+ Escalares: valores atomicos
+
+6) ¿Cuál es el punto de entrada (entry point) para los programas
+en C#?
+ El metodo main
+
+7) ¿Cuál es la diferencia entre una conversión implícita y una
+explícita?
+ Implicita: es automatica. Por ej: de Short a Int.
+ Explicita: se usa casteo, metodos de conversion. Por ej: de Int a Short.(Se puede perder informacion)
+
+8) ¿Para qué sirven los modificadores out y ref? ¿En qué se
+diferencian?
+9) Explique cómo funciona el método TryParse. ¿Qué retorna?
+¿Qué recibe? ¿Cuál es la diferencia con el método Parse?
+ p.ej:  int resultado;	
+	Int32.TryParse(valorAConvertir, out resultado)->devuelve true si lo convierte, sino false
+obs:out pasa la variable('resultado'en este caso) por referencia.
+ out no requiere que se inicialice la variable. Es de salida.
+ref requiere que se inicialice esa variable. Es de entrada y salida.
+Parse: int.Parse(valor)->devuelve int si lo convierte, sino error.
