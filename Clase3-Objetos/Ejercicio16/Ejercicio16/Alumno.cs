@@ -66,10 +66,10 @@ namespace Ejercicio16
             mostrar += string.Format("Legajo: {0}\n", this.legajo);
             if (this.notaFinal == -1)
             {
-                mostrar+= "alumno desaprobado";
-                return mostrar;
+                mostrar+= "alumno desaprobado\n";
+                return mostrar;                
             }
-            mostrar += string.Format("Nota Final: {0}", this.notaFinal);
+            mostrar += string.Format("Nota Final: {0}\n", this.notaFinal);
             return mostrar; // "Aprobado";            
             
         }

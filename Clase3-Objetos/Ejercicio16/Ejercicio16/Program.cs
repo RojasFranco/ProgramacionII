@@ -25,13 +25,15 @@ namespace Ejercicio16
 
             //alumnoUno.Estudiar(notaUno, notaDos);
             alumnoUno.CalcularFinal();
+            alumnoDos.CalcularFinal();
             // Puedo usar   Console.Write("Obs {0}", alumnoUno.Mostrar()); 
 
 
-            alumnoUno.Mostrar();
-            /*alumnoDos.Mostrar();
-            alumnoTres.Mostrar();
-            */
+            Console.WriteLine(alumnoUno.Mostrar());
+
+            Console.WriteLine(alumnoDos.Mostrar());
+
+            Console.WriteLine(alumnoTres.Mostrar());           
            
 
             Console.ReadKey();

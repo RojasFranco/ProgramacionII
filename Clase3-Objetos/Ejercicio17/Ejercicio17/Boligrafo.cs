@@ -29,12 +29,6 @@ namespace Ejercicio17
             return this.tinta;
         }
 
-        public bool Pintar(short gasto, out string dibujo)
-        {
-
-
-        }
-
         public void Recargar()
         {
             this.tinta = cantidadTintaMaxima;
@@ -42,11 +36,20 @@ namespace Ejercicio17
 
         private void SetTinta(short tinta)
         {
-            if(tinta>=0 && tinta<=cantidadTintaMaxima)
+            this.tinta += tinta;
+            if (tinta>=0 && tinta<=cantidadTintaMaxima)
             {
-                this.tinta = tinta;
+                // OK
+                //this.tinta = tinta;
             }
         }
-            
+
+        public bool Pintar(short gasto, out string dibujo)
+        {
+            SetTinta(gasto);
+            dibujo = "";
+            return true;
+        }        
+
     }
 }
