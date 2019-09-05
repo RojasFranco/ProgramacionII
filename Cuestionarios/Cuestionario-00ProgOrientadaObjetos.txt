@@ -1,0 +1,31 @@
+Prog orientada a objetos
+
+1. ¿Qué propone el ?paradigma orientado a objetos?? ¿Qué es un
+paradigma?
+Una teoria aceptada, un modelo a seguir para resolver ciertos problemas.
+Paradigm orientado a objetos: Identifica objetos y relaciones y a traves de esto resuelve problemas.
+
+2. Nombre a los ?pilares? del paradigma orientado a objetos.
+Abstraccion - polimorfismo - herencia - encapsulamiento.
+
+3. ¿Qué es una ?clase??
+Serie de caracteristicas de un conjunto de objetos. Un modelo, molde a traves del cual se instanciaran
+objetos.
+
+4. ¿Qué es un ?objeto?? ¿En qué se relacionan con las clases?
+Una instancia de una clase. Caracteristicas de objetos: metodos, atributos, relaciones, identificador
+
+5. ¿Qué significa? instanciar ?un objeto?
+sacarlo del molde
+
+6. Explique qué es la ?abstracción? en el contexto de programación
+orientada a objetos y cuál es su relación con las clases.
+Va a tomar las caracteristicas de objetos que se creen relevantes, importantes.
+
+7. ¿Qué son los ?atributos? o estado de un objeto?
+Almacenan propiedades y datos de obj.
+
+8. ¿Qué son los ?métodos? de un objeto?
+Implementacion de una operacion.-
+
+

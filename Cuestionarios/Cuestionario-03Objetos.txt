@@ -1,0 +1,65 @@
+OBJETOS
+1. ¿Los objetos se crean en tiempo de diseño, de compilación o de
+ejecución?
+En tiempo de ejecucion.
+
+2. ¿Cuántos objetos de tipo Alumno puedo tener en mi sistema?
+¿Cuántas clases Alumno tengo en mi sistema? (Dentro de un mismo
+namespace).
+Clase 1, objetos infinitos.
+
+3. Explique el ?ciclo de vida? de un objeto. Detalle las funciones del
+operador new?, del constructor y del ?Garbage Collector?.
+Creacion(new) - destruccion(CLR)
+
+4. ¿En qué ?segmento de memoria? se almacenan los tipos valor (value
+type) y en cuál los tipos por referencia (reference type)? ¿En cuál
+interfiere al Garbage Collector?
+Tipos de valor stack, y los de referencias en el heap.
+El Garbage interviene con los de referencias
+
+5. Compare y describa: ?Destrucción determinista y no determinista?.
+Asocie con el concepto de variables y objetos
+Determ: Esta determinado su tiempo de vida.
+No determinista: No se conoce cuando va a terminar su vida.
+
+CONSTANTES
+6. ¿Qué es una ?constante?? ¿Se puede declarar constantes estáticas (static
+const)?
+Constante: Es un valor fijo. 
+No se puede declarar constantes estaticas, ya que todas lo son.
+
+7. ¿Cuándo se asigna el valor a las constantes (tiempo de compilación o
+ejecución)? ¿Dos objetos del mismo tipo pueden tener distintos
+valores en una misma constante? Relacione con atributos de instancia
+y estáticos.
+En tiempo de compilacion.
+No pueden tener distintos valores.
+
+
+CONSTRUCTORES
+8. ¿Qué es un ?constructor?? ¿Cuál es su función?
+Inicializar objeto
+
+9. ¿Qué es el ?constructor por defecto?? ¿Qué sucede con el mismo
+cuando declaramos un constructor nuevo en la clase?
+Cuando no declaro ningun constructor. Es un constructor publico e inicializa con datos por defecto
+Si declaramos nuestro constructor, anulamos el constructor por defecto(Si quiero uno publico tengo q declararlo)
+
+10.¿Con qué valores se cargan los atributos cuando se llama al constructor
+por defecto?
+
+11.¿Qué es y para qué sirve un constructor estático?? ¿En qué se
+diferencia su sintaxis de los métodos de instancia?
+Constructor estatico: Inicializan atributos estaticos - static Nombre(). No puede llevar parametros de entrada.Lo llama
+el CLR. Es el primero que se ejecuta. No puedo sobrecargarlo, no tengo como diferenciarlo.
+Metodos de instancia: inicializan atributos de instancia - 
+
+
+12.¿Cuántas veces se puede llamar a un constructor estático? ¿Quién lo
+puede llamar?
+Lo llama el CLR
+
+
+13.¿Se ejecutará primero un constructor estático o uno de instancia?
+Estatico.

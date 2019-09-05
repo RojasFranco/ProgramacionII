@@ -1,0 +1,41 @@
+9. ¿Qué es un método estático? ¿En qué se diferencia de los métodos de
+instancia (no estáticos)?
+Estatico es de la clase. No estaticos es de un objeto.
+Estaticos pueden acceder solo a miembros estaticos. No estaticos pueden acceder a ambos
+
+10. ¿Qué es una clase estática? ¿En qué se diferencia de las clases no
+estáticas?
+Es un clase con todos los miembros estaticos. No se pueden instanciar.
+public static Class-
+
+11. ¿Puedo tener miembros estáticos en clases no-estáticas? Si
+ ¿Puedo
+tener miembros no-estáticos en clases estáticas?No
+
+
+12. ¿Necesito instanciar un objeto de la clase para llamar a sus métodos
+estáticos?
+No
+
+
+13. ¿Cuántos valores distintos pueden existir para un campo estático y
+cuántos de uno no-estático cuando se crearon 5 instancias de la clase?
+Estatico 1. y no estatico 1 por cada instancia.
+
+
+14. ¿Se puede usar el ?operador “this”? dentro de un método estático? ¿Se
+puede acceder a miembros no-estáticos desde un método estático de
+la misma clase? ¿Se puede acceder a miembros estáticos desde un
+método de instancia?
+
+15. ¿Se pueden declarar variables estáticas dentro de un método
+(locales)?
+No.
+
+16. De dos ejemplos de métodos estáticos que pertenezcan a las clases de
+.NET Framework.
+Console - Math
+
+17. De un ejemplo de un método de instancia que pertenezca a las clases
+de .NET Framework
+Random-

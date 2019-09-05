@@ -1,0 +1,18 @@
+18. ¿Qué es un ?namespace? y cuál es su función principal?
+Una caja donde guardamos elementos. Permite organizar el codigo
+
+
+19. ¿Puedo tener distintos namespaces dentro de un mismo proyecto o
+ensamblado de .NET?
+Si - no necesita llamarse igual al proyecto
+
+20. ¿Para qué se usa la ?directiva? ?using??
+Importa elementos del namespace y permite usarlos sin necesidad de escribir a que namespace pertenece la clase
+
+21. ¿Para qué se usa la ?directiva? ?alias??
+Para generar nombre alternativo para el namespace.
+
+22. ¿Puedo declarar dos clases ?independientes/distintas? con el ?mismo
+identificador? dentro del ?mismo namespace?? ¿Y en namespaces
+distintos?
+No, dentro del mismo namespace no. En namespace separados si.
