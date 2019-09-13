@@ -125,6 +125,7 @@ namespace Billetes
             return retorno;
         }
 
+
         public static Peso operator -(Peso peso, Dolar dolar)
         {
             Peso retorno = new Peso(peso.GetCantidad() - ((Peso)dolar).GetCantidad() );

@@ -1,0 +1,90 @@
+1. ¿Qué significa ?sobrecargar? un método o constructor?
+
+
+2. ¿Qué debe cambiar para que la sobrecarga de un método o
+constructor sea válida?
+Parametros u el orden de los tipos.(solo mirando el tipo)
+
+3. ¿La sobrecarga se resuelve en tiempo de ejecución o en tiempo de
+compilación? ¿Cómo se distingue a qué sobrecarga llamar?
+En tiempo de compilacion. Se distingue comparando los parametros
+
+4. ¿Se tiene en cuenta el nombre o identificador de los parámetros de
+entrada para una sobrecarga?
+No.
+
+5. ¿Se tiene en cuenta el modificador de visibilidad para una sobrecarga?
+No.
+
+Sobrecarga de Métodos:
+6. ¿Los métodos pueden tener el mismo nombre que otros elementos de
+una misma clase? (atributos, propiedades, etc).
+No. Solo el de otros metodos
+
+7. Mencione dos razones por las cuales se sobrecargan los métodos.
+Si se quiere agregar funcionalidad sin alterar un metodo existente.
+Si son metodos similares pero reciben parametros distintos o nuevo parametro.
+
+8. ¿Los métodos estáticos pueden ser sobrecargados?
+Si.
+
+9. ¿Agregar el modificador “static” sin cambiar los parámetros de entrada
+es una sobrecarga válida?
+No.
+
+10. ¿Agregar un modificador “out” o “ref” en la firma del método sin
+cambiar nada más es una sobrecarga válida?
+Si. Se consideran parte de la firma.
+
+11. ¿Cambiar el tipo de retorno sin cambiar los parámetros de entrada es
+una sobrecarga válida?
+No.
+
+12. Si tenemos distintas sobrecargas de un método, ¿cómo podemos
+reutilizar código?
+Se lo llama desde adentro al otro metodo. Se reutiliza codigo.
+
+Sobrecarga de Constructores:
+13. ¿Se pueden sobrecargar los constructores estáticos?
+No. No reciben parametros de entrada. A este lo llama el CLR solo 1 vez, yo no lo puedo llamar.
+
+14. ¿Se puede llamar a un constructor estático con el ?operador “this()”??
+No, no se lo puede llamar.
+
+15. ¿Se puede llamar a constructores de otras clases con el operador
+“this()”?
+No, this hace referencia a su misma.
+
+16. ¿Se puede sobrecargar un constructor privado?
+Si, es un constructor normal.
+
+Sobrecarga de Operadores:
+17. ¿Qué es un ?operador?? ¿En qué se diferencian un operador ?unario? y un
+operador ?binario?? De un ejemplo de cada uno.
+Un simbolo para operar. 
+Binario es entre 2 operandos(por ej *,+), y el unario uno solo(por ej !, ++)
+
+18. ¿Qué varía en la sintaxis de la sobrecarga de operadores unarios y
+binarios?
+Uno tiene 2 parametros de entrada, el otro solo 1.
+
+
+19. ¿Se pueden sobrecargar los operadores de operación y asignación (+=,
+-=, *=, /=)? ¿Por qué?
+No. (cuando sobrecargo el+, se sobrecarga +=).
+
+
+20. ¿Cuál es la diferencia entre un ?operador de conversión implícito? y uno
+explícito?? (En finalidad, declaración y aplicación)
+Explicita: perdida de informacion. se usa operador de casteo
+Implicita: no se pierde informacion.
+
+21. Los operadores de casteo “(T)x” no se pueden sobrecargar. ¿Cuál es la
+alternativa?
+
+
+22. ¿Cuál es la diferencia entre ?castear? (casting),? convertir? (converting) y
+parsear? (parsing)?
+parsear: convertir string a tipo de dato.
+castear: convertir algo de manera forzada. (cuando se usa p. ej (string)Algo )
+convertir:conversiones.-
