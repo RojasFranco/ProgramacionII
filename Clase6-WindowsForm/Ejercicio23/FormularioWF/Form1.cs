@@ -173,5 +173,10 @@ namespace FormularioWF
         {
             //textEuroAEuro.Enabled = false;
         }
+
+        private void TextCotizacionEuro_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

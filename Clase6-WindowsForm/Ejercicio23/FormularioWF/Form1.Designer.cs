@@ -273,6 +273,7 @@
             this.textCotizacionEuro.Name = "textCotizacionEuro";
             this.textCotizacionEuro.Size = new System.Drawing.Size(100, 20);
             this.textCotizacionEuro.TabIndex = 23;
+            this.textCotizacionEuro.TextChanged += new System.EventHandler(this.TextCotizacionEuro_TextChanged);
             // 
             // textCotizacionDolar
             // 
@@ -292,7 +293,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(832, 287);
+            this.ClientSize = new System.Drawing.Size(863, 232);
             this.Controls.Add(this.textCotizacionPeso);
             this.Controls.Add(this.textCotizacionDolar);
             this.Controls.Add(this.textCotizacionEuro);

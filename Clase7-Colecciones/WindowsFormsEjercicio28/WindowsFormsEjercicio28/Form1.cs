@@ -38,10 +38,28 @@ namespace WindowsFormsEjercicio28
                     contadorPalabras.Add(palabra, 1);
                 }
             }
+                       
 
-            
-            
-            //MessageBox.Show("{0} {1}", contadorPalabras);
-        }
+            string mostrador = string.Empty;
+            foreach(string palabra in contadorPalabras.Keys)
+            {
+                mostrador += string.Format(" {0} {1}\n", palabra, contadorPalabras[palabra]);
+            }
+            MessageBox.Show(mostrador, "Palabras encontradas");
+
+
+            /*
+             Ordenados TOP 3 
+             
+            List<int> listaOrdenar = contadorPalabras.Values.ToList();
+            listaOrdenar.Sort();
+            string mostrarTop3 = string.Empty;
+            for (int i=0;i<3;i++)
+            {                
+
+            }
+            */
+
+        }                
     }
 }
