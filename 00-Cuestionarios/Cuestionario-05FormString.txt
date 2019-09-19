@@ -1,0 +1,75 @@
+Formularios:
+1. ¿Los formularios son objetos?
+Si, se instancia en el main. Podemos cambiar propiedades, cambiar constructor, etc.
+
+2. ¿De qué clase heredan ?todos? los formularios?
+De Form.
+
+3. ¿Qué es una ?partial class? o clase parcial?
+Separan una misma clase en varios archivos.(son los .cs que vamos creando)
+
+4. ¿Puedo agregar parámetros de entrada a la clase del formulario? Si
+ ¿Y sobrecargar el constructor?	Si
+ ¿Y declarar nuevos campos/propiedades? Si
+
+
+5. ¿Cuál es la diferencia entre ?Show()? y ?ShowDialog()??
+ShowDialog: muestra la ventana en forma modal(modal: solo podes interactuar con esa ventana hasta finalizarla)
+Show: Se puede interactuar con varias ventanas.
+
+6. ¿Qué es un ?formulario MDI?? ¿Con qué propiedad indico que un
+formulario es un contenedor MDI? ¿Con qué propiedad del formulario
+hijo indico cuál es el formulario MDI padre?
+Mdi: Permite mostrar varias ventanas dentro de una ventana padre.
+Sdi: tiene una sola ventana. por ej notepad.-
+Con la propiedad is MdiContainer puedo indicar(devuelve true o false)
+MdiParent = formPadre(instancia del formulario padre).
+
+7. Explique el ?ciclo de vida? de los formularios asociándolo a sus eventos
+correspondientes.
+formClosing->se esta cerrando.
+closed->cerrado.
+Disposed->se libero la memoria.
+
+new->se crea la instancia del formulario
+load->antes de que sean visibles los controles. Sirve si hay que inicializar los controles.
+Paint->Ya es visible el form.-
+Activated->Se lanza cada vez que hacemos foco.
+
+Arrays:
+8. ¿Qué es un ?array “jagged”?? ¿En qué valor se inicializan sus elementos?
+-Cuando hay arrays anidados. Se inicializan en null(porque es tipo referencia).
+
+9. ¿Los arrays son objetos?
+-Si. Todos son objetos.
+
+10. ¿Qué significa que en C# los arrays son de? “base-cero”??
+-Que el primer indice es cero.
+
+11. Los arrays implementan la? interfaz IEnumerable?, ¿qué es lo que esto
+les permite hacer?
+-Permite usar el foreach
+
+12. ¿Cómo se declara e instancia un ?array multidimensional??
+-
+
+13. Considerando que la ?propiedad Length? devuelve la cantidad TOTAL de
+elementos de TODAS las dimensiones del array, ¿qué valor vamos a
+mostrar por consola en el siguiente código?:
+int[ , , ] a = new int[ 3, 2, 3 ];
+int[ , ] b = new int[ 5, 4 ];
+Console.WriteLine(“Array Length = {0}”, a.Length + b.Length);
+-3x2x3 + 5x4 = 38. Lenght en matrices devuelve la cantidad total.
+
+Strings:
+14. ¿Es lo mismo declarar una variable como string (en minúscula) o como
+String (con la primera letra en mayúscula)? ¿Por qué?
+-Si, string es un alias de String.
+
+15. ¿Se puede recorrer un string con un foreach? ¿Por qué?
+-Si, ya que es un array de chars.
+
+16. ¿Qué significa que los strings son? inmutables?? ¿qué sucede en
+realidad cuando usamos métodos u operadores para modificar un
+string?
+-Que son fijos en memoria. No puedo modificar ese string en memoria(ni el valor), sino que creo uno nuevo.

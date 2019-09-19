@@ -48,6 +48,15 @@ namespace WindowsFormsEjercicio28
             MessageBox.Show(mostrador, "Palabras encontradas");
 
 
+            /*Puedo usar
+             contadorPalabras.orderByDescending(
+             keyValuePair => keyValuePair.Value)
+             Param entrada       lo que devuelve            
+
+
+
+            */
+
             /*
              Ordenados TOP 3 
              
