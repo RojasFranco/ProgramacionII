@@ -22,9 +22,8 @@ namespace WindowsFormsEjercicio28
             Dictionary<string, int> contadorPalabras = new Dictionary<string, int>();
             string textoIngresado;            
             textoIngresado = this.richTextBoxTextoIngresado.Text;
-            //textoIngresado.Split(' ');
+            
 
-            //List<string> palabrasSeparadas = new List<string>();
             string[] palabrasSeparadas = textoIngresado.Split(' ');
 
             foreach (string palabra in palabrasSeparadas)
@@ -38,37 +37,48 @@ namespace WindowsFormsEjercicio28
                     contadorPalabras.Add(palabra, 1);
                 }
             }
-                       
-
-            string mostrador = string.Empty;
-            foreach(string palabra in contadorPalabras.Keys)
-            {
-                mostrador += string.Format(" {0} {1}\n", palabra, contadorPalabras[palabra]);
-            }
-            MessageBox.Show(mostrador, "Palabras encontradas");
 
 
-            /*Puedo usar
-             contadorPalabras.orderByDescending(
-             keyValuePair => keyValuePair.Value)
-             Param entrada       lo que devuelve            
+            List<KeyValuePair<string, int>> lista = contadorPalabras.ToList();
+
+            InformarMayorCantidad(lista, 3);                       
 
 
 
-            */
+            //InformarMayorCantidad(lista, 4);
+
 
             /*
-             Ordenados TOP 3 
-             
-            List<int> listaOrdenar = contadorPalabras.Values.ToList();
-            listaOrdenar.Sort();
-            string mostrarTop3 = string.Empty;
-            for (int i=0;i<3;i++)
-            {                
-
+            string mostrador = string.Empty;
+            foreach(KeyValuePair<string, int> palabra in lista)
+            {
+                mostrador += string.Format(" {0}: {1}\n", palabra.Key, palabra.Value);
             }
+            MessageBox.Show(mostrador, "Palabras encontradas");
             */
 
-        }                
+
+        }
+
+        private void InformarMayorCantidad(List<KeyValuePair<string, int >> lista, int cantidadPedidas)
+        {
+
+            lista = lista.OrderByDescending(z => z.Value).ToList();
+            StringBuilder sb = new StringBuilder();
+            //lista.Sort();
+            for (int i=0; i<cantidadPedidas; i++)
+            {
+                sb.AppendFormat(" {0} : {1}\n", lista[i].Key, lista[i].Value);
+            }
+
+            MessageBox.Show(sb.ToString(), "Palabras encontradas", MessageBoxButtons.OK);
+        }
+
+        /*private void Comparador(List<KeyValuePair<string, int>> listaRecibida)
+        {
+            listaRecibida
+        }*/
+
+
     }
 }

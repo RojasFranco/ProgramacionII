@@ -88,7 +88,7 @@ namespace CentralitaHerencia
                 case Llamada.TipoLlamada.Provincial:
                     return costoProvincial;
                 default:
-                    return costoProvincial + costoLocal;                
+                    return (costoProvincial + costoLocal);                
             }            
         }
 
@@ -97,12 +97,28 @@ namespace CentralitaHerencia
         public string Mostrar()
         {
             StringBuilder sb = new StringBuilder();
-            sb.AppendFormat(" Razon social: {0} ", this.razonSocial);
-            sb.AppendFormat(" Ganancia total: {0} ", this.GananciaPorTotal);
-            sb.AppendFormat(" Ganancia Local: {0} ", this.GananciaPorLocal);
-            sb.AppendFormat(" Ganancia Provincial: {0} ", this.GananciaPorProvincial);
+            sb.AppendFormat("\n Razon social: {0}\n ", this.razonSocial);
+            sb.AppendFormat(" Ganancia total: {0}\n ", this.GananciaPorTotal);
+            sb.AppendFormat(" Ganancia Local: {0}\n ", this.GananciaPorLocal);
+            sb.AppendFormat(" Ganancia Provincial: {0}\n ", this.GananciaPorProvincial);   
+            foreach(Llamada llamada in Llamadas) //Llamadas= this.listaLlamadas
+            {
+                if(llamada is Local)
+                {
+                    sb.Append(((Local)llamada).Mostrar());
+                }
+                else if(llamada is Provincial)
+                {
+                    sb.Append(((Provincial)llamada).Mostrar());
+                }
+            }
             return sb.ToString();
 
+        }
+
+        public void OrdenarLlamadas()
+        {            
+            listaDeLlamadas.Sort(Llamada.OrdenarPorDuracion);// VER            
         }
 
         #endregion

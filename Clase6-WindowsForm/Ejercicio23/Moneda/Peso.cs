@@ -13,12 +13,12 @@ namespace Billetes
 
         #region Constructores
 
-        private Peso()
+        static Peso()
         {
-            cotizRespectoDolar = 1/38.33;
+            cotizRespectoDolar = 0.026;
         }
 
-        public Peso(double cantidad) : this()
+        public Peso(double cantidad)
         {
             this.cantidad = cantidad;
 
@@ -30,6 +30,13 @@ namespace Billetes
         }
 
         #endregion
+
+
+        public static void SetCotizacion(double cotizacion)
+        {
+            cotizRespectoDolar = cotizacion;
+        }
+
 
 
         #region Metodos

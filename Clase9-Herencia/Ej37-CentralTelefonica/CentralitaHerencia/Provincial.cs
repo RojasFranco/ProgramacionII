@@ -32,9 +32,8 @@ namespace CentralitaHerencia
             this.franjaHoraria = miFranja;
         }
 
-        public Provincial(string origen, Franja miFranja, float duracion, string destino) : base(duracion, destino, origen)
-        {
-            this.franjaHoraria = miFranja;
+        public Provincial(string origen, Franja miFranja, float duracion, string destino) : this(miFranja, new Llamada(duracion, destino, origen))
+        {            
         }
 
         #endregion
@@ -59,9 +58,10 @@ namespace CentralitaHerencia
         public string Mostrar()
         {
             StringBuilder sb = new StringBuilder();
+            sb.Append("\n-------------Llamada provincial-------------");
             sb.Append(base.Mostrar());
-            sb.AppendFormat(" Costo llamada : {0} ", this.CostoLlamada);
-            sb.AppendFormat(" Franja horaria: {0} ", this.franjaHoraria);
+            sb.AppendFormat("\n Costo llamada : {0} ", this.CostoLlamada);
+            sb.AppendFormat("\n Franja horaria: {0} ", this.franjaHoraria);
             return sb.ToString();
         }
 

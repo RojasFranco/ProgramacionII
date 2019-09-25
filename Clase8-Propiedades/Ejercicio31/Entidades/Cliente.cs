@@ -48,7 +48,7 @@ namespace Entidades
 
         public Cliente(int numero, string nombre) : this(numero)
         {
-            Nombre = nombre; // = this.nombre = nombre
+            this.Nombre = nombre; // = this.nombre = nombre
         }
 
 

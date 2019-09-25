@@ -13,11 +13,11 @@ namespace Entidades
 
         #region Propiedades
 
-        public int NumeroActual
+        public static int NumeroActual
         {
             get
             {
-                return numeroActual;
+                return numeroActual+1;
             }
         }
         #endregion
@@ -27,31 +27,32 @@ namespace Entidades
         public enum Puesto
         {
             Caja1,
-            Caja2,
+            Caja2
         }
         #endregion        
 
 
         #region Constructores
 
-        private PuestoAtencion()
+        static PuestoAtencion()
         {
             numeroActual = 0;
         }
 
-        public PuestoAtencion(Puesto puesto) : this()
+        public PuestoAtencion(Puesto puesto)
         {
             this.puesto = puesto;
         }
 
         #endregion
 
-        /// Falta
+        /// Falta ESto
         #region Metodos
-        /*public bool AtenderCliente(Cliente cliente)
+        public static bool AtenderCliente(Cliente cliente)
         {
-
-        }*/
+            System.Threading.Thread.Sleep(3000);
+            return true;
+        }
         #endregion
 
 

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Billetes;
 
+
 namespace FormularioWF
 {
     public partial class Form1 : Form
@@ -17,31 +18,17 @@ namespace FormularioWF
         {
             InitializeComponent();
             textEuroADolar.Enabled = false;
-            textEuroAEuro.Enabled = false;
+            //textEuroAEuro.Enabled = false;
             textEuroAPeso.Enabled = false;
             textPesoADolar.Enabled = false;
             textPesoAEuro.Enabled = false;
             textPesoAPeso.Enabled = false;
             textDolarADolar.Enabled = false;
             textDolarAEuro.Enabled = false;
-            textDolarAPeso.Enabled = false;
+            textDolarAPeso.Enabled = false;            
 
         }
 
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnConvertEuro_Click(object sender, EventArgs e)
         {            
@@ -54,7 +41,7 @@ namespace FormularioWF
                 Euro euroIngresado;// = new Euro(euro);
                 if (double.TryParse(textCotizacionEuro.Text, out cotizacionEuro))
                 {
-                    euroIngresado = new Euro(euro, cotizacionEuro);
+                    euroIngresado = new Euro(euro, cotizacionEuro);                    
                 }
                 else
                 {
@@ -62,8 +49,6 @@ namespace FormularioWF
                 }
 
 
-
-                
                 double dolarIngresar;
                 double pesoIngresar;
 
@@ -73,14 +58,14 @@ namespace FormularioWF
                 pesoIngresar = ((Peso)euroIngresado).GetCantidad();
 
 
-                textEuroADolar.Text = dolarIngresar.ToString();
-                textEuroAPeso.Text = pesoIngresar.ToString();
-
-
-
+                textEuroADolar.Text = dolarIngresar.ToString("0.00");
+                textEuroAPeso.Text = pesoIngresar.ToString("0.00");
+                
             }
+
         }
 
+        
         private void btnConvertDolar_Click(object sender, EventArgs e)
         {
             double dolar;
@@ -105,8 +90,8 @@ namespace FormularioWF
                 pesoIngresar = ((Peso)dolarIngresado).GetCantidad();
 
                 textDolarADolar.Text = dolar.ToString();
-                textDolarAEuro.Text = euroIngresar.ToString();
-                textDolarAPeso.Text = pesoIngresar.ToString();
+                textDolarAEuro.Text = euroIngresar.ToString("0.00");
+                textDolarAPeso.Text = pesoIngresar.ToString("0.00");
 
             }
 
@@ -122,14 +107,15 @@ namespace FormularioWF
                 Peso pesoIngresado = new Peso(peso);
                 double dolarIngresar;
                 double euroIngresar;
+                
 
                 dolarIngresar = ((Dolar)pesoIngresado).GetCantidad();
                 euroIngresar = ((Euro)pesoIngresado).GetCantidad();                
 
                 textPesoAPeso.Text = peso.ToString();
-                textPesoADolar.Text = dolarIngresar.ToString();
-                textPesoAEuro.Text = euroIngresar.ToString();
-
+                textPesoADolar.Text = dolarIngresar.ToString("0.00");
+                textPesoAEuro.Text = euroIngresar.ToString("0.00");
+                
             }
 
 
@@ -140,34 +126,26 @@ namespace FormularioWF
         {
             //this.btnLockCotizacion.ImageIndex=1
             //this.btnLockCotizacion.ImageIndex =
-            if (this.btnLockCotizacion.ImageIndex==2)
-            {
-                this.btnLockCotizacion.ImageIndex = 0;
-            }
-            
+
             if(this.btnLockCotizacion.ImageIndex==0)
             {
                 textCotizacionDolar.Enabled = false;
                 textCotizacionEuro.Enabled = false;
                 textCotizacionPeso.Enabled = false;
-                this.btnLockCotizacion.ImageIndex += 1;
+                this.btnLockCotizacion.ImageIndex = 1;
             }
             else
             {
                 textCotizacionDolar.Enabled = true;
                 textCotizacionEuro.Enabled = true;
                 textCotizacionPeso.Enabled = true;
-                this.btnLockCotizacion.ImageIndex -= 1;
+                this.btnLockCotizacion.ImageIndex = 0;
             }            
 
             
         }
 
 
-        private void txtEuro_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void textEuroAEuro_TextChanged(object sender, EventArgs e)
         {
@@ -177,6 +155,15 @@ namespace FormularioWF
         private void TextCotizacionEuro_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            //Dolar.GetCotizacion();
+
+            textCotizacionDolar.Text = Billetes.Dolar.GetCotizacion().ToString();
+            textCotizacionEuro.Text = Billetes.Euro.GetCotizacion().ToString();
+            textCotizacionPeso.Text = Billetes.Peso.GetCotizacion().ToString();                    
         }
     }
 }

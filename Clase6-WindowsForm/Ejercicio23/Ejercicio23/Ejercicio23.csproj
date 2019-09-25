@@ -49,9 +49,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Moneda\Moneda.csproj">
+    <ProjectReference Include="..\Moneda\Billetes.csproj">
       <Project>{980bbf45-f26a-4c88-8fcf-8dfc90c2127e}</Project>
-      <Name>Moneda</Name>
+      <Name>Billetes</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

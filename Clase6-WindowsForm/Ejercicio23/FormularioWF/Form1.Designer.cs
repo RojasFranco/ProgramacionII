@@ -98,7 +98,7 @@
             this.label4.Size = new System.Drawing.Size(80, 16);
             this.label4.TabIndex = 3;
             this.label4.Text = "Cotizacion";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
+            //this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // txtEuro
             // 
@@ -106,7 +106,7 @@
             this.txtEuro.Name = "txtEuro";
             this.txtEuro.Size = new System.Drawing.Size(86, 20);
             this.txtEuro.TabIndex = 4;
-            this.txtEuro.TextChanged += new System.EventHandler(this.txtEuro_TextChanged);
+            //this.txtEuro.TextChanged += new System.EventHandler(this.txtEuro_TextChanged);
             // 
             // textDolar
             // 
@@ -131,7 +131,7 @@
             this.EuroA.Size = new System.Drawing.Size(40, 16);
             this.EuroA.TabIndex = 7;
             this.EuroA.Text = "Euro";
-            this.EuroA.Click += new System.EventHandler(this.label5_Click);
+            //this.EuroA.Click += new System.EventHandler(this.label5_Click);
             // 
             // DolarA
             // 
@@ -142,7 +142,7 @@
             this.DolarA.Size = new System.Drawing.Size(46, 16);
             this.DolarA.TabIndex = 8;
             this.DolarA.Text = "Dolar";
-            this.DolarA.Click += new System.EventHandler(this.label6_Click);
+            //this.DolarA.Click += new System.EventHandler(this.label6_Click);
             // 
             // PesoA
             // 
@@ -187,6 +187,7 @@
             // 
             // textEuroAEuro
             // 
+            this.textEuroAEuro.Enabled = false;
             this.textEuroAEuro.Location = new System.Drawing.Point(446, 116);
             this.textEuroAEuro.Name = "textEuroAEuro";
             this.textEuroAEuro.Size = new System.Drawing.Size(100, 20);
@@ -322,6 +323,7 @@
             this.Controls.Add(this.Euro);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -14,12 +14,12 @@ namespace Billetes
 
         #region Constructores
 
-        private Dolar()
+        static Dolar()
         {
             cotizRespectoDolar = 1;
         }
 
-        public Dolar(double cantidad) : this()
+        public Dolar(double cantidad)
         {
             this.cantidad = cantidad;
         }
@@ -45,9 +45,14 @@ namespace Billetes
         {
             return cotizRespectoDolar;
         }
-
-
+        
         #endregion
+
+
+        public static void SetCotizacion(double cotizacion)
+        {
+            cotizRespectoDolar = cotizacion;
+        }
 
 
         #region Sobrecargas explicitas/implicitas

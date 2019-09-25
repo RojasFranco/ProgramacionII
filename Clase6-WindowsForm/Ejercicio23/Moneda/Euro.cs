@@ -14,13 +14,13 @@ namespace Billetes
 
         #region Constructores
 
-        private Euro()
+        static Euro()
         {
             cotizRespectoDolar = 1/1.16;
 
         }
 
-        public Euro(double cantidad) : this()
+        public Euro(double cantidad) 
         {
             this.cantidad = cantidad;
 
@@ -31,6 +31,12 @@ namespace Billetes
             cotizRespectoDolar = cotizacion;
         }
 
+
+
+        public static void SetCotizacion(double cotizacion)
+        {
+            cotizRespectoDolar = cotizacion;
+        }
 
         #endregion
 

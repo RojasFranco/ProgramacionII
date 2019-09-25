@@ -18,7 +18,8 @@ namespace Entidades
         private Negocio()
         {
             clientes = new Queue<Cliente>();
-            // puesto            
+            caja = new PuestoAtencion(PuestoAtencion.Puesto.Caja1);
+
         }
 
         public Negocio(string nombre) : this()
@@ -31,25 +32,35 @@ namespace Entidades
 
 
 
-        /*public Cliente Cliente
+        public Cliente Cliente
         {
             get
             {
-
+                return clientes.Dequeue();
             }
 
-            set
+            set //VERRRRR
             {
-
+                bool retorno = this + value;
             }
-        }*/
+        }
+
+
+        public int ClientesPendientes
+        {
+            get
+            {
+                return this.clientes.Count;
+            }
+        }
+
 
 
         #region Sobrecargas
 
         public static bool operator ==(Negocio negocio, Cliente cliente)
         {
-            if(negocio.clientes.Contains(cliente))
+            if (negocio.clientes.Contains(cliente))
             {
                 return true;
             }
@@ -61,6 +72,31 @@ namespace Entidades
             return !(negocio == cliente);
         }
 
+
+        public static bool operator +(Negocio negocio, Cliente cliente)
+        {
+            bool retorno = false;
+            if (negocio != cliente)
+            {
+                negocio.clientes.Enqueue(cliente);
+                retorno = true;
+            }
+            return retorno;
+        }
+
+
+        public static bool operator ~(Negocio negocio)
+        {
+            Cliente clienteAgregar = negocio.Cliente;
+            bool retorno = false;
+
+            if(negocio != clienteAgregar)
+            {
+                PuestoAtencion.AtenderCliente(clienteAgregar);
+                retorno = true;
+            }
+            return retorno;
+        }
 
         #endregion
     }

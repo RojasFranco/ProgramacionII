@@ -48,9 +48,9 @@ namespace CentralitaHerencia
         public string Mostrar()
         {
             StringBuilder sb = new StringBuilder();
-            sb.AppendLine("-------LLamada local---------");
+            sb.AppendLine("\n-------LLamada local---------");
             sb.Append(base.Mostrar());
-            sb.AppendFormat(" Costo llamada: {0: 0.00} ", this.CostoLlamada); //Formato para que muestre x.xx
+            sb.AppendFormat("\n Costo llamada: {0: 0.00} ", this.CostoLlamada); //Formato para que muestre x.xx
             return sb.ToString();
         }
 
