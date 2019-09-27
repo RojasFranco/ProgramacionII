@@ -13,7 +13,7 @@ namespace CentralitaHerencia
 
         #region Propiedades
 
-        public float CostoLlamada
+        public override float CostoLlamada
         {
             get
             {
@@ -24,13 +24,13 @@ namespace CentralitaHerencia
 
         #region Constructores
 
-        public Local(Llamada llamada, float costo) : base(llamada.Duracion, llamada.NroDestino, llamada.NroOrigen)
+        public Local(Llamada llamada, float costo) : this(llamada.NroOrigen, llamada.Duracion, llamada.NroDestino, costo)
         {
-            this.costo = costo;                        
         }
 
-        public Local(string origen, float duracion, string destino, float costo) : this(new Llamada(duracion, destino, origen), costo)
-        {            
+        public Local(string origen, float duracion, string destino, float costo) : base(duracion, destino, origen)//this(new Llamada(duracion, destino, origen), costo)
+        {
+            this.costo = costo;
         }
 
         //O puedo intercambiar lugar del base con this
@@ -44,14 +44,30 @@ namespace CentralitaHerencia
         {
             return (this.costo * this.Duracion);
         }
+        
 
-        public string Mostrar()
+        protected override string Mostrar()
         {
-            StringBuilder sb = new StringBuilder();
+            StringBuilder sb = new StringBuilder();            
             sb.AppendLine("\n-------LLamada local---------");
             sb.Append(base.Mostrar());
             sb.AppendFormat("\n Costo llamada: {0: 0.00} ", this.CostoLlamada); //Formato para que muestre x.xx
             return sb.ToString();
+        }
+                
+        
+        public override bool Equals(object obj)
+        {
+            if(obj is Local) // O obj.GetType() == typeof(Local)
+            {
+                return true;
+            }
+            return false;            
+        }
+
+        public override string ToString()
+        {
+            return this.Mostrar();
         }
 
         #endregion

@@ -16,13 +16,10 @@ namespace CentralitaHerencia
         #region Propiedades
 
 
-        public abstract float CostoLlamada;
-        /*{
-            get
-            {
-                return 
-            }
-        }*/
+        public abstract float CostoLlamada
+        {
+            get;            
+        }
 
         public float Duracion
         {
@@ -65,14 +62,13 @@ namespace CentralitaHerencia
 
         #region Metodos
 
-        public string Mostrar()
+        protected virtual string Mostrar()
         {
             StringBuilder sb = new StringBuilder();
             sb.AppendFormat("\n Duracion : {0}", this.Duracion);
             sb.AppendFormat("\n Nro destino: {0} ", this.NroDestino);
             sb.AppendFormat("\n Nro origen: {0}", this.NroOrigen);
             return sb.ToString();            
-
         }
 
         public static int OrdenarPorDuracion(Llamada llamada1, Llamada llamada2)
@@ -87,8 +83,11 @@ namespace CentralitaHerencia
             }
             return 1;
         }
+        
+
 
         #endregion
+
         
         public enum TipoLlamada
         {
@@ -96,5 +95,22 @@ namespace CentralitaHerencia
             Provincial,
             Todas
         }
+
+
+        public static bool operator ==(Llamada llamada1, Llamada llamada2)
+        {
+            if(llamada1.Equals(llamada2) && llamada1.NroOrigen==llamada2.NroOrigen && llamada1.NroDestino==llamada2.NroDestino)
+            {
+                return true;
+            }            
+            return false;
+        }
+        
+
+        public static bool operator !=(Llamada llamada1, Llamada llamada2)
+        {
+            return !(llamada1 == llamada2);
+        }
+
     }
 }

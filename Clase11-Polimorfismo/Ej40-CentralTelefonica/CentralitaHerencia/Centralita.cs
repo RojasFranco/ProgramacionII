@@ -68,27 +68,29 @@ namespace CentralitaHerencia
         private float CalcularGanancia(Llamada.TipoLlamada tipo)
         {
             float costoLocal = 0;
-            float costoProvincial = 0;
+            float costoProvincial = 0;            
             
-            foreach (Llamada llamada in listaDeLlamadas)
+            foreach (Llamada llamada in this.Llamadas)
             {
                 if(llamada is Local) // o (llamada.GetType() == typeof(Local)) 
                 {
-                    costoLocal += ((Local)llamada).CostoLlamada;
+                    costoLocal += llamada.CostoLlamada; //((Local)llamada).CostoLlamada;
                 }
                 else if(llamada is Provincial)
                 {
-                    costoProvincial += ((Provincial)llamada).CostoLlamada;
+                    costoProvincial += llamada.CostoLlamada; //((Provincial)llamada).CostoLlamada;
                 }
             }    
             switch(tipo)
-            {
+            {                
+                
                 case Llamada.TipoLlamada.Local:
                     return costoLocal;
                 case Llamada.TipoLlamada.Provincial:
                     return costoProvincial;
                 default:
-                    return (costoProvincial + costoLocal);                
+                   return (costoProvincial + costoLocal);                
+                 
             }            
         }
 
@@ -103,14 +105,18 @@ namespace CentralitaHerencia
             sb.AppendFormat(" Ganancia Provincial: {0}\n ", this.GananciaPorProvincial);   
             foreach(Llamada llamada in Llamadas) //Llamadas= this.listaLlamadas
             {
-                if(llamada is Local)
+                sb.Append(llamada.ToString());                
+                /*
+                 * NO HACEN FALTA POR POLIMORFISMO
+                 * toString llama a llamadas y al ver el type se dirige a Local o Provincial
+                if (llamada is Local)
                 {
-                    sb.Append(((Local)llamada).Mostrar());
+                    sb.Append((Local)llamada.ToString());
                 }
                 else if(llamada is Provincial)
                 {
-                    sb.Append(((Provincial)llamada).Mostrar());
-                }
+                    sb.Append(((Provincial)llamada).ToString());
+                }*/                
             }
             return sb.ToString();
 

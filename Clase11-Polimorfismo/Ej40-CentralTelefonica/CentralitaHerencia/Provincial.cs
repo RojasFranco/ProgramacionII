@@ -14,12 +14,12 @@ namespace CentralitaHerencia
 
         #region Propiedades
 
-        public float CostoLlamada
+        public override float CostoLlamada
         {
             get
             {
                 return CalcularCosto();
-            }
+            }            
         }
 
         #endregion
@@ -27,13 +27,13 @@ namespace CentralitaHerencia
 
         #region Constructores
 
-        public Provincial(Franja miFranja, Llamada llamada) : base(llamada.Duracion, llamada.NroDestino, llamada.NroOrigen)
-        {
-            this.franjaHoraria = miFranja;
+        public Provincial(Franja miFranja, Llamada llamada) : this(llamada.NroOrigen, miFranja, llamada.Duracion, llamada.NroDestino)
+        {            
         }
 
-        public Provincial(string origen, Franja miFranja, float duracion, string destino) : this(miFranja, new Llamada(duracion, destino, origen))
-        {            
+        public Provincial(string origen, Franja miFranja, float duracion, string destino) : base(duracion, destino, origen)
+        {
+            this.franjaHoraria = miFranja;
         }
 
         #endregion
@@ -55,10 +55,10 @@ namespace CentralitaHerencia
 
         }
 
-        public string Mostrar()
+        protected override string Mostrar()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("\n-------------Llamada provincial-------------");
+            sb.Append("\n---------Llamada provincial--------");
             sb.Append(base.Mostrar());
             sb.AppendFormat("\n Costo llamada : {0} ", this.CostoLlamada);
             sb.AppendFormat("\n Franja horaria: {0} ", this.franjaHoraria);
@@ -67,6 +67,21 @@ namespace CentralitaHerencia
 
         #endregion
 
+        /*
+        public override bool Equals(object obj)
+        {
+            if(obj is Provincial)
+            {
+                return true;
+            }
+            return false;
+        }
+        */
+
+        public override string ToString()
+        {
+            return this.Mostrar();
+        }
 
         public enum Franja
         {
