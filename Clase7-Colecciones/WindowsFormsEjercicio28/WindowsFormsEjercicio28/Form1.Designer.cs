@@ -39,6 +39,7 @@
             this.richTextBoxTextoIngresado.Size = new System.Drawing.Size(467, 200);
             this.richTextBoxTextoIngresado.TabIndex = 0;
             this.richTextBoxTextoIngresado.Text = "";
+            //this.richTextBoxTextoIngresado.TextChanged += new System.EventHandler(this.RichTextBoxTextoIngresado_TextChanged);
             // 
             // button1
             // 

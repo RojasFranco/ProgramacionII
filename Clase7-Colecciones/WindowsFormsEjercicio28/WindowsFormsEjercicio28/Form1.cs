@@ -41,8 +41,9 @@ namespace WindowsFormsEjercicio28
 
             List<KeyValuePair<string, int>> lista = contadorPalabras.ToList();
 
-            InformarMayorCantidad(lista, 3);                       
-
+            InformarMayorCantidad(lista, 3);
+            Form f1 = new Form1();
+            f1.ShowDialog();
 
 
             //InformarMayorCantidad(lista, 4);
@@ -61,17 +62,15 @@ namespace WindowsFormsEjercicio28
         }
 
         private void InformarMayorCantidad(List<KeyValuePair<string, int >> lista, int cantidadPedidas)
-        {
-
-            lista = lista.OrderByDescending(z => z.Value).ToList();
+        {            
+            lista = lista.OrderByDescending(z => z.Value).ToList();            
             StringBuilder sb = new StringBuilder();
             //lista.Sort();
             for (int i=0; i<cantidadPedidas; i++)
             {
                 sb.AppendFormat(" {0} : {1}\n", lista[i].Key, lista[i].Value);
             }
-
-            MessageBox.Show(sb.ToString(), "Palabras encontradas", MessageBoxButtons.OK);
+            MessageBox.Show(sb.ToString(), "Palabras encontradas", MessageBoxButtons.OK);            
         }
 
         /*private void Comparador(List<KeyValuePair<string, int>> listaRecibida)

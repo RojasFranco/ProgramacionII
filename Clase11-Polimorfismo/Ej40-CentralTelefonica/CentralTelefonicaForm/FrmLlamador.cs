@@ -10,17 +10,11 @@ using System.Windows.Forms;
 
 namespace CentralTelefonicaForm
 {
-    public partial class Form1 : Form
+    public partial class FrmLlamador : Form
     {
-        public Form1()
+        public FrmLlamador()
         {
             InitializeComponent();
-        }
-
-        private void Button1_Click(object sender, EventArgs e)
-        {
-            FrmLlamador llamador = new FrmLlamador();
-            llamador.Show();
         }
     }
 }
