@@ -21,21 +21,21 @@ namespace ComiqueriaApp
             InitializeComponent();
             
             this.comiqueria = new Comiqueria();
-            //Productos
+            //Productos            
             Producto producto1 = new Comic("AMAZING SPIDER-MAN 01: SUERTE DE ESTAR VIVO", 5, 560.00, "Dan Slott", Comic.TipoComic.Occidental);
             Producto producto2 = new Figura("DC FIGURAS 29: STARFIRE", 2, 650.00, 29.00);
             Producto producto3 = new Figura(1, 349.58, 20);
-            producto3.Stock = -2; //No debería cambiar el stock. 
+            producto3.Stock = -2; //No debería cambiar el stock, porque es negativo
             Producto producto4 = new Comic("AKIRA 01 (EDICION CON SOBRECUBIERTA)", 10, 800.00, "KATSUHIRO OTOMO", Comic.TipoComic.Oriental);
             producto4.Stock = 5; //El stock debería ser 5. 
-            Producto producto5 = new Figura(3, 649.58, 20);
-
+            Producto producto5 = new Figura(3, 649.58, 20);            
+            
             this.comiqueria += producto1;
             this.comiqueria += producto2;
             this.comiqueria += producto3;
             this.comiqueria += producto4;
 
-            //No debería agregar
+            //No debería agregar porque tiene misma alt que producto3
             this.comiqueria += producto5;
 
             //Sobrecargas de vender. 
@@ -82,12 +82,20 @@ namespace ComiqueriaApp
             //Si el constructor tiene parámetros de entrada proporcionarle los argumentos que correspondan.
             //El campo "productoSeleccionado" contiene el producto actualmente seleccionado en el listBox de productos. 
             //El campo "comiqueria" contiene la instancia de la comiqueria que se está utilizando. 
-            Form ventasForm = new VentasForm();
+            Form ventasForm = new VentasForm(comiqueria, productoSeleccionado);
             DialogResult result = ventasForm.ShowDialog(); //Agregar código para abrir ventasForm de forma MODAL                      
             // Cargar algo en dialogResult antes de cerrar ventasForm
             if (result == DialogResult.OK)
             {
-                this.richTextBoxVentas.Text = this.comiqueria.ListarVentas();                    
+                this.richTextBoxVentas.Text = this.comiqueria.ListarVentas();
+                /*
+                 * Para actualizar
+                 * */
+                Guid codigoProducto = ((KeyValuePair<Guid, string>)this.listBoxProductos.SelectedItem).Key;
+                this.productoSeleccionado = this.comiqueria[codigoProducto];
+                this.richTextBoxDetalle.Text = this.productoSeleccionado.ToString();
+                
+
             }
         }
     }

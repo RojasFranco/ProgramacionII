@@ -1,0 +1,228 @@
+[Módulo - 15]Colecciones
+
+(083) - ¿Cuál es la diferencia entre las colecciones y las matrices?
+-Matriz: tamaño fijo - Coleccion:Modificable
+
+(084) - ¿Cuál es la diferencia entre las colecciones genéricas y las no genéricas?
+-Genericas: Guardan un tipo definido de dato. Tienen seguridad de tipo. P ej List(se usa <>)
+No genericas: P. ej: Arraylist(new arraylist), llevan cualquier tipo de dato.(No se usa <>)
+
+(085) - ¿Es necesario determinar el tipo de dato o realizar una conversión al recuperar
+un objeto de una colección genérica?
+No es necesario.(Salvo que se use por ej herencia).-
+
+(086) - Describa los siguientes tipos de colecciones genéricas: Dictionary, List,
+SortedList.
+-Diccionario: Es un par clave, valor. Pueden ser de cualquier tipo.
+List: Es como un array, pero crece dinamicamente.
+SortedList: Es como List pero con criterio de ordenamiento.
+
+(087) - ¿Qué son y cuál es la diferencia entre una cola (queue) y una pila (stack)?
+Asocie con los conceptos “FIFO” y “LIFO”.
+-Pila: Lifo
+-Cola: Fifo
+
+(088) - Describa los siguientes tipos de colecciones no genéricas: ArrayList, Hashtable.
+ArrayList es como una lista pero no generica.
+Hashtable es como diccionario pero no generica.
+
+(089) - ¿Se pueden ordenar directamente las colas y las pilas? ¿Por qué (piense en la
+función de dichas colecciones)? ¿Cuál es la alternativa?
+No, porque se rompe las condiciones. Ademas ya vienen con un ordenamiento predeterminado.
+Una alternativa es transformarla a una Lista y ordenarla.
+
+(090) - ¿Cuál es la diferencia entre las colas y pilas genéricas y las colas y pilas no
+genéricas?
+Colas y pilas genericas guardar un determinado tipo de datos.
+
+
+
+
+[Módulo - 16]Propiedades:
+(092) - ¿Qué es y para qué sirve una propiedad?
+Para leer o acceder a datos de forma segura
+
+(093) - ¿Para qué sirve el descriptor de acceso “get”?
+Para obtener el dato de esa propiedad. La lectura.
+
+(094) - ¿Para qué sirve el descriptor de acceso “set”? ¿Cuál es el papel de la palabra
+clave “value”?
+Para ingresar ese valor en la propiedad de forma segura. Value va a ser el valor a ingresar.
+
+(095) - ¿Cómo declaro una propiedad de sólo lectura?
+Se usa solo el get
+
+(096) - ¿Cómo declaro una propiedad de sólo escritura?
+Se usa solo set.
+
+
+
+
+[Módulo - 17] Enumerados:
+(097) - ¿Qué es un enumerado? ¿Cuál es su función?
+-Es una lista de constantes numericas con nombre. No se le puede cambiar el valor
+
+(098) - ¿Un enumerado sólo puede estar anidado dentro de una clase?
+-No, puede estar en un archivo apartde, pero dentro de un mismo namespace.
+
+(099) - ¿Cuál es el primer valor numérico de un enumerado por defecto? ¿Se pueden
+sobrescribir los valores por defecto?
+-0(Cero). Si, se pueden sobreescribir.
+
+(100) - Indique los valores asociados a cada constante:
+enum Day {Sat, Sun, Mon=15, Tue, Wed, Thu=2, Fri};
+Sat=0 - Sun=1 - Tue=16 - Wed=17 - Thu=2 - Fri=3
+
+
+
+[Módulo - 18] Indexadores:
+(101) - ¿Qué significa indexar?
+-Registrar datos ordenadamente segun un indice segun un criterio.
+
+(102) - ¿Qué permite un indexador (función)?
+-Permite pasarle un criterio y devolver algo en base a eso.
+
+(103) - ¿Cuál es la diferencia a la hora de declarar un indexador y una propiedad?
+-indexador lleva parametro de entrada, la propiedad no.
+
+(104) - ¿Los indexadores solo se pueden indexar por valores numéricos?
+No.
+
+(105) - ¿Un indexador puede recibir más de un parámetro (ser multidimensionales)?
+No. Por ej una matriz
+
+(106) - ¿Los indexadores pueden ser sobrecargados?
+Si, ya que se puede cambiar el parametro(orden, tipo).
+
+(107) - ¿Cuál es el papel de la palabra clave “this” en un indexador?
+-Hace referencia a la misma instancia sobre la que estoy trabajando.
+
+(108) - ¿Cuál es el papel de la palabra clave “value” en un indexador?
+
+
+(109) - ¿Se pueden declarar indexadores estáticos? ¿Por qué?
+No, porque usa this que es referencia a la propia instancia.
+
+[Módulo - 19] Encapsulamiento:
+
+(110) - Defina encapsulamiento / encapsulación en el contexto del paradigma
+orientado a objetos.
+-Agrupar datos con los elementos que lo operan.
+-Agrupa datos y metodos por clase. Ocultar implementacion interna y exponer solo lo necesario.
+
+(111) - Defina cada nivel de ocultamiento / accesibilidad de la programación
+orientada a objetos. Incluya la función del modificador “internal” en C#.
+-Public: publico desde cualquier lado
+-Private: Solo se puede acceder desde la clase
+-internal: Solo puedo acceder desde un mismo proyecto(unidad de compilacion, ensamblado)
+-Protected: Solo puedo acceder desde la clase o sus clases derivadas.
+
+
+
+[Módulo - 20] Herencia:
+(112) - ¿Qué es la herencia en el contexto de la programación orientada a objetos?
+¿Cuál es su propósito?
+-Compartir atributos, metodos, para que las clases derivadas puedan especializarse.
+Su proposito: reutilizar codigo, organizar relacion entre clases
+
+(113) - ¿Qué nombre recibe la clase que hereda y qué nombre recibe la clase que es
+heredada?
+La clase heredada: base
+La que hereda: derivada
+
+(114) - ¿Qué significa que la herencia es transitiva?
+si a=b, b=c->a=c. En herencia: class a, class b:a, class c:b ---> class c:a
+
+(115) - ¿Se heredan los constructores?
+-No, son lo unico que no se hereda
+
+(116) - ¿Se heredan los miembros private de la clase base?
+-Si excepto los constructores.
+
+(117) - ¿Qué es herencia múltiple? ¿Es posible en C#? ¿En qué se diferencia de la
+herencia simple?
+Se puede heredar + de una clases al mismo tiempo.
+
+(118) - ¿Una clase pública puede heredar de una clase privada?
+No, no puede tener mas visibilidad.
+
+(119) - ¿Qué es una clase sellada (sealed)?
+Una clase que no puede ser heredada.
+
+(120) - ¿Una clase sellada puede heredar de otras clases? (Ser clase derivada)
+-si
+
+(121) - ¿Cómo actúa el modificador “protected” en los miembros de la clase base para
+una clase derivada y cómo para una clase no-derivada? Relacionar la respuesta con
+los modificadores “public” y “private”.
+protegido desde la clase derivada y base es como si fuera public. Pero fuera seria como private
+
+(122) - ¿Qué pasa si la clase derivada no hace una llamada explícita a un constructor
+de la clase base? En esta situación, ¿qué pasa si la clase base declaró explícitamente
+un constructor con parámetros de entrada?
+-No existiria mas el constructor por defecto, deberia llamar al de base.-
+
+
+
+
+[Módulo - 21] Polimorfismo:
+(123) - ¿Qué es el polimorfismo en el contexto de la programación orientada a
+objetos?
+-Importa el tipo de objeto en memoria. 
+Un Mismo comportamiento base puede tener distintas implementaciones.
+
+(124) - ¿Qué implica el polimorfismo basado en herencia?
+-Cuando tengo clase base, esta puede suplantar a las clases derivadas. P ej: animal puede 
+suplantar a perro, pero no al reves.
+
+
+
+
+[Módulo - 22] Sobreescritura de métodos (Override):
+(125) - ¿Dónde reside la definición del método a sobrescribir? ¿Qué palabra clave se
+usa para definirlo?
+-En clase base. Se usa virtual o abstract.
+
+(126) - ¿Dónde reside la implementación del método a sobrescribir? ¿Qué palabra
+clave se usa para implementarlo?
+-override-
+
+(127) - ¿Cuándo se resuelve la invocación? (Tiempo de ejecución o compilación)
+-Tiempo de ejecucion
+
+(128) - ¿Cuáles son las diferencias entre sobrecargar (overload) y sobrescribir
+(override) un método? (Llenar la tabla)
+Firma (Diferencias o no diferencias en las firmas): Sobrecargas: diferentes / sobreescribir: iguales
+Ubicación (Misma clase / Clases diferentes): Sobrecargas:misma clase // Sobreescribir: distintas
+Tiempo de resolución (Compilación / Ejecución): Sobrecargas: compilacion // Sobreescribir: Ejecucion
+Tipo objeto / Tipo Referencia (¿Qué determina
+cuál implementación se utilizará?): Sobrecargas: Referencia // Sobreescribir: objeto
+
+
+
+
+[Módulo - 23] Clases y miembros abstractos:
+(129) - Si quiero declarar un método que pueda ser sobrescrito en las clases derivadas,
+¿qué modificador debo usar?
+-Virtual
+
+(130) - Si quiero declarar un método que deba ser sobrescrito en las clases derivadas,
+¿qué modificador debo usar?
+-Abstract
+
+(131) - ¿Qué es una clase abstracta? ¿Cuál es su función?
+-Una plantilla, marco de trabajo para la jerarquia de herencia. No se puede instanciar.
+
+(132) - Las clases no-abstractas que derivan de una clase abstracta, ¿deben
+implementar todos sus métodos abstractos?
+-Si.
+
+(133) - Las clases abstractas que derivan de una clase abstracta, ¿deben implementar
+todos sus métodos abstractos?
+-No, no se debe implementar.
+
+(134) - ¿Se pueden declarar miembros abstractos en clases no-abstractas?
+-No.
+
+(135) - ¿Para sobrescribir un método se debe heredar de una clase abstracta?
+-No, puede ser virtual.

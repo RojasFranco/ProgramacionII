@@ -34,6 +34,7 @@
             this.lblCantidad = new System.Windows.Forms.Label();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.lvlPrecioFinal = new System.Windows.Forms.Label();
+            this.lvlPrecioMostrar = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -45,6 +46,7 @@
             this.btnVender.TabIndex = 0;
             this.btnVender.Text = "Vender";
             this.btnVender.UseVisualStyleBackColor = true;
+            this.btnVender.Click += new System.EventHandler(this.btnVender_Click);
             // 
             // btnCancelar
             // 
@@ -54,6 +56,7 @@
             this.btnCancelar.TabIndex = 1;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // lblDescripcion
             // 
@@ -92,6 +95,7 @@
             0,
             0,
             0});
+            this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
             // 
             // lvlPrecioFinal
             // 
@@ -102,11 +106,21 @@
             this.lvlPrecioFinal.TabIndex = 5;
             this.lvlPrecioFinal.Text = "Precio Final";
             // 
+            // lvlPrecioMostrar
+            // 
+            this.lvlPrecioMostrar.AutoSize = true;
+            this.lvlPrecioMostrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lvlPrecioMostrar.Location = new System.Drawing.Point(332, 142);
+            this.lvlPrecioMostrar.Name = "lvlPrecioMostrar";
+            this.lvlPrecioMostrar.Size = new System.Drawing.Size(0, 16);
+            this.lvlPrecioMostrar.TabIndex = 6;
+            // 
             // VentasForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(443, 280);
+            this.Controls.Add(this.lvlPrecioMostrar);
             this.Controls.Add(this.lvlPrecioFinal);
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.lblCantidad);
@@ -114,7 +128,7 @@
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnVender);
             this.Name = "VentasForm";
-            this.Text = "VentasForm";
+            this.Text = "Nueva venta";
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -129,5 +143,6 @@
         private System.Windows.Forms.Label lblCantidad;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.Label lvlPrecioFinal;
+        private System.Windows.Forms.Label lvlPrecioMostrar;
     }
 }

@@ -53,15 +53,15 @@ namespace ComiqueriaLogic
 
         public void Vender(Producto producto)
         {
-            Vender(producto, 1);
+            this.Vender(producto, 1);
         }
 
         //*************************** REVISAR ORDENAMIENTO
         public string ListarVentas()
         {
             string retorno = string.Empty;
-            this.ventas.OrderByDescending(x => x.Fecha);
-
+            this.ventas = this.ventas.OrderByDescending(x => x.Fecha).ToList();
+            
             foreach (Venta venta in this.ventas)
             {
                 retorno += venta.ObtenerDescripcionBreve();
