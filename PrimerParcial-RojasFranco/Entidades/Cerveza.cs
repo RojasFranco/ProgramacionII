@@ -59,11 +59,18 @@ namespace Entidades
         /// <param name="cerveza"></param>
         public static implicit operator Botella.Tipo(Cerveza cerveza)
         {
-            if(cerveza.GetType().Name == Tipo.Vidrio.ToString() )
+            /*  ----------------------IMPORTANTE--------------------------------------
+             *  ¿Por que no funciona??
+             *  No funciona porque el cerveza is __ buscaria CLASES derivadas de cerveza(NO ENUM. Por ej 40)
+             *  Serviria si tendria que buscar si una botella es cerveza o agua
+             * 
+             * if(cerveza.GetType().Name == Tipo.Vidrio.ToString() )
             {
                 return Tipo.Vidrio;
             }
-            return Tipo.Plastico;
+            return Tipo.Plastico;*/                       
+
+            return cerveza.tipo;
         }
         
 

@@ -37,7 +37,7 @@ namespace ControlCantina
         public void AgregarBotella(Botella b)
         {
             if (this.cantina + b)
-            {
+            {                
                 this.BotellaEnBarra(b);
             }
         }

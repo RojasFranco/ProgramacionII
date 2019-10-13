@@ -40,7 +40,7 @@
             // 
             this.textNroDestino.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textNroDestino.Location = new System.Drawing.Point(13, 13);
-            this.textNroDestino.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textNroDestino.Margin = new System.Windows.Forms.Padding(4);
             this.textNroDestino.Name = "textNroDestino";
             this.textNroDestino.Size = new System.Drawing.Size(368, 35);
             this.textNroDestino.TabIndex = 0;
@@ -86,10 +86,15 @@
             // 
             this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Franja_1",
+            "Franja_2",
+            "Franja_3"});
             this.comboBox1.Location = new System.Drawing.Point(12, 279);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(368, 32);
             this.comboBox1.TabIndex = 5;
+            this.comboBox1.Text = "Franja";
             // 
             // FrmLlamador
             // 
@@ -103,7 +108,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textNroDestino);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmLlamador";
             this.Text = "FrmLlamador";
             this.ResumeLayout(false);

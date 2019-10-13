@@ -90,7 +90,7 @@
             this.comboBoxTipoBotella.Name = "comboBoxTipoBotella";
             this.comboBoxTipoBotella.Size = new System.Drawing.Size(121, 21);
             this.comboBoxTipoBotella.TabIndex = 3;
-            this.comboBoxTipoBotella.ValueMemberChanged += new System.EventHandler(this.comboBoxTipoBotella_ValueMemberChanged);
+            //this.comboBoxTipoBotella.Leave += new System.EventHandler(this.ComboBoxTipoBotella_Leave);
             // 
             // btnAgregar
             // 

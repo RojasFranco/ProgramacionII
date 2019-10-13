@@ -37,7 +37,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.Name = "Barra";
-            this.Size = new System.Drawing.Size(571, 336);
+            this.Size = new System.Drawing.Size(549, 364);
             this.ResumeLayout(false);
 
         }
