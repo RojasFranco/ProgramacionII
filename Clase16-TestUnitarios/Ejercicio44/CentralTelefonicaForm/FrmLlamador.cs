@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CentralitaHerencia;
+using Ejercicio41;
 
 namespace CentralTelefonicaForm
 {
@@ -45,12 +46,26 @@ namespace CentralTelefonicaForm
                 }
 
                 */
-                //this.centralita.Llamadas.Add(new Provincial(textBoxNroOrigen.Text, franja, 10, this.textNroDestino.Text));                
-                this.centralita = this.centralita + (new Provincial(textBoxNroOrigen.Text, franja, random.Next(1, 51), this.textNroDestino.Text));
+                //this.centralita.Llamadas.Add(new Provincial(textBoxNroOrigen.Text, franja, 10, this.textNroDestino.Text));  
+                try
+                {
+                    this.centralita = this.centralita + (new Provincial(textBoxNroOrigen.Text, franja, random.Next(1, 51), this.textNroDestino.Text));
+                }                
+                catch(CentralitaException error)
+                {
+                    MessageBox.Show(error.Message);
+                }
             }
             else
             {
-                this.centralita = this.centralita + (new Local(textBoxNroOrigen.Text, random.Next(1, 51), this.textNroDestino.Text, (float)random.NextDouble()));
+                try
+                {
+                    this.centralita = this.centralita + (new Local(textBoxNroOrigen.Text, random.Next(1, 51), this.textNroDestino.Text, (float)random.NextDouble()));
+                }                
+                catch(CentralitaException error)
+                {
+                    MessageBox.Show(error.Message);
+                }
             }
             //MessageBox.Show(centralita.Mostrar()); 
         }

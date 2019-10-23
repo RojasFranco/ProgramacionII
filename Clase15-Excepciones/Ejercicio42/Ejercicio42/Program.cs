@@ -30,6 +30,20 @@ namespace Ejercicio42
         Console.WriteLine(errorMiException.Message);
         Console.WriteLine(errorMiException.InnerException.Message);
       }*/
+      try
+      {
+        ClaseUno.MetodoInstancia();
+      }
+      catch(MiException miError)
+      {
+        Exception exceptionGeneral = miError;
+        while(exceptionGeneral != null)
+        {
+            Console.WriteLine(exceptionGeneral.Message);
+            exceptionGeneral = exceptionGeneral.InnerException;
+        }
+      }
+
 
       
       Console.ReadKey();

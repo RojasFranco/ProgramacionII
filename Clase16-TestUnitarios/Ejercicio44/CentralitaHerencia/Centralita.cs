@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Ejercicio41;
 
 namespace CentralitaHerencia
 {
@@ -163,7 +164,9 @@ namespace CentralitaHerencia
             if(centralita != nuevaLlamada)
             {
                 centralita.AgregarLlamada(nuevaLlamada);
+                return centralita;
             }
+            throw new CentralitaException("La llamada ya se encuentra en la central", "clase", "metodo");
             return centralita;
         }
 

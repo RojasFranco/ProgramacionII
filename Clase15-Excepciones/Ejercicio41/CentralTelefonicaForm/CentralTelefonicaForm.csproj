@@ -8,9 +8,10 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>CentralTelefonicaForm</RootNamespace>
     <AssemblyName>CentralTelefonicaForm</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -82,6 +83,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -100,6 +102,10 @@
     <ProjectReference Include="..\CentralitaHerencia\CentralitaHerencia.csproj">
       <Project>{d301c00c-ee6f-4893-b33e-45edb64bf549}</Project>
       <Name>CentralitaHerencia</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ejercicio41\Ejercicio41.csproj">
+      <Project>{7781dfc7-bee1-4df9-9367-a42da3be8f1c}</Project>
+      <Name>Ejercicio41</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

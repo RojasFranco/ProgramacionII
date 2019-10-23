@@ -9,7 +9,7 @@ namespace Ejercicio42
   public class UnaException : Exception
   {
     public UnaException(string mensaje, Exception innerException) : base(mensaje, innerException)
-    {      
+    {              
     }
   }
 }

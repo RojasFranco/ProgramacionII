@@ -29,7 +29,7 @@ namespace Ejercicio42
     }
 
 
-    /*
+    
     public ClaseUno(int n)
     {      
 
@@ -37,23 +37,23 @@ namespace Ejercicio42
       {
         ClaseUno clase = new ClaseUno();
       }
-      catch(DivideByZeroException err)
+      catch(UnaException err) //Tiene unaException y el division por inner
       {
-        Exception UnaExcepcion = new Exception("Err 2do ctor", err);
-        throw UnaExcepcion;
-        //throw new UnaException("Err 2do ctor", err);
+        throw err;
+        //throw new ClaseUno(3); UnaException("Err 2do ctor", err);
       }        
-    }*/
-
-
-    public void MetodoInstancia()
-    {
-
-
     }
 
-
-
-
+    public static void MetodoInstancia()
+    {
+        try
+        {
+            new ClaseUno(3);
+        }        
+        catch(UnaException error)
+        {
+            throw new MiException("Ult error", error);
+        }
+    }
   }
 }
