@@ -11,25 +11,22 @@ namespace Ejercicio42
     static void Main(string[] args)
     {
 
-      /*try
-      {
-        ClaseUno clase = new ClaseUno();
-        clase.MetodoInstancia();
+            /*try
+            {
+              ClaseUno clase = new ClaseUno();
+              clase.MetodoInstancia();
 
-      }
-      catch(DivideByZeroException error)
-      {
-        Console.WriteLine(error.Message);        
-      }*/
+            }
+            catch(DivideByZeroException error)
+            {
+              Console.WriteLine(error.Message);        
+            }
+            catch(MiException errorMiException)
+            {
+              Console.WriteLine(errorMiException.Message);
+              Console.WriteLine(errorMiException.InnerException.Message);
+            }*/
 
-
-
-      /*
-      catch(MiException errorMiException)
-      {
-        Console.WriteLine(errorMiException.Message);
-        Console.WriteLine(errorMiException.InnerException.Message);
-      }*/
       try
       {
         ClaseUno.MetodoInstancia();
@@ -42,7 +39,7 @@ namespace Ejercicio42
             Console.WriteLine(exceptionGeneral.Message);
             exceptionGeneral = exceptionGeneral.InnerException;
         }
-      }
+       }
 
 
       
