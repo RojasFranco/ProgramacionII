@@ -22,6 +22,7 @@ namespace ConsoleApp
             Console.WriteLine(eLapiz.texto);
             Console.ForegroundColor = colorOriginal;
             Console.WriteLine(miLapiz);
+
             EscrituraWrapper eBoligrafo = miBoligrafo.Escribir("Hola");
             Console.ForegroundColor = eBoligrafo.color;
             Console.WriteLine(eBoligrafo.texto);

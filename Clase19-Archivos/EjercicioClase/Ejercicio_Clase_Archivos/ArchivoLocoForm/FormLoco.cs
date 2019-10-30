@@ -15,22 +15,34 @@ namespace ArchivoLocoForm
         }
 
         private void buttonGuardar_Click(object sender, EventArgs e)
-        {
-            this.openFileDialog1.ShowDialog();            
+        {            
             string textoGuardar = this.richTextBoxTexto.Text;
-            Archivador.GuardarTexto(openFileDialog1.FileName, false, "Archiv", textoGuardar);
-            //Environment.GetFolderPath(Environment.SpecialFolder.Desktop)
+            //MessageBox.Show(textoGuardar);
+            try
+            {
+                Archivador.GuardarTexto(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), false, "Miarchivo", textoGuardar);
+            }            
+            catch(Exception errorPathInexistente)
+            {
+                MessageBox.Show(errorPathInexistente.Message);
+            }
         }
 
         private void buttonLeer_Click(object sender, EventArgs e)
         {
-            DialogResult resultado = this.openFileDialog1.ShowDialog();            
+            DialogResult resultado = this.openFileDialog1.ShowDialog();                       
             if (resultado==DialogResult.OK)
             {
-                string rutaArchivo = openFileDialog1.FileName;                    
-                string texto = Archivador.LeerTexto(rutaArchivo, this.richTextBoxTexto.Text);
-                MessageBox.Show(texto);
-                
+                string rutaArchivo = openFileDialog1.FileName;    
+                if(Path.GetExtension(rutaArchivo) == EXTENSION_VALIDA)
+                {
+                    string texto = Archivador.LeerTexto(rutaArchivo);
+                    MessageBox.Show(texto);
+                }                
+                else
+                {
+                    MessageBox.Show("Extension invalida");
+                }
             }
         }
     }

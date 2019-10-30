@@ -15,24 +15,30 @@ namespace Entidades
         public static void GuardarTexto(string path, bool append, string nombreArchivo, string texto)
         {
             //StreamWriter streamWriter = new StreamWriter("ruta",true, );
-            if(path==null)
+            if(!Directory.Exists(path))
             {
                 throw new Exception("Directorio inexistente");
             }
             else
             {
-                StreamWriter streamWriter = new StreamWriter(path, append);
-                streamWriter.Write(texto);
+                string nombreCompleto = path + "\\" + nombreArchivo + ".txt";
+                StreamWriter streamWriter = new StreamWriter(nombreCompleto, append);
+                
+                streamWriter.WriteLine(texto);
+                streamWriter.Close();
+                //nombreArchivo += ".txt";
             }
 
         }
 
-        public static string LeerTexto(string path, string texto)
+        public static string LeerTexto(string path)
         {            
             if (File.Exists(path))
             {
                 StreamReader streamReader = new StreamReader(path);
-                return streamReader.ReadToEnd();
+                string retorno = streamReader.ReadToEnd();
+                streamReader.Close();
+                return retorno;
                 
             }
             else
