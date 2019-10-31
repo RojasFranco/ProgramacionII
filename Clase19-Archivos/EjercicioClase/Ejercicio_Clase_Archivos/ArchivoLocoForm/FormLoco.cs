@@ -33,7 +33,7 @@ namespace ArchivoLocoForm
             DialogResult resultado = this.openFileDialog1.ShowDialog();                       
             if (resultado==DialogResult.OK)
             {
-                string rutaArchivo = openFileDialog1.FileName;    
+                string rutaArchivo = openFileDialog1.FileName;                    
                 if(Path.GetExtension(rutaArchivo) == EXTENSION_VALIDA)
                 {
                     string texto = Archivador.LeerTexto(rutaArchivo);
@@ -43,6 +43,10 @@ namespace ArchivoLocoForm
                 {
                     MessageBox.Show("Extension invalida");
                 }
+            }
+            else
+            {
+                MessageBox.Show("No se selecciono ruta");
             }
         }
     }

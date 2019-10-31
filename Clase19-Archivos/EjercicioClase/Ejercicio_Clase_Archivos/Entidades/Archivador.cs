@@ -1,4 +1,4 @@
-﻿using System;
+﻿ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,11 +22,18 @@ namespace Entidades
             else
             {
                 string nombreCompleto = path + "\\" + nombreArchivo + ".txt";
+
+                string[] archEscribir = texto.Split('\n');//Esto agrego para guardar con salto de linea
+
                 StreamWriter streamWriter = new StreamWriter(nombreCompleto, append);
                 
-                streamWriter.WriteLine(texto);
-                streamWriter.Close();
-                //nombreArchivo += ".txt";
+                //streamWriter.WriteLine(texto); Esto funciona
+                
+                foreach(string palabra in archEscribir)
+                {
+                    streamWriter.WriteLine(palabra);
+                }
+                streamWriter.Close();                
             }
 
         }
