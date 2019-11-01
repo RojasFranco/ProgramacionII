@@ -14,8 +14,10 @@ namespace Ejercicio56
         {
             if(File.Exists(ruta))
             {
-                StreamReader streamReader = new StreamReader(ruta);
-                return streamReader.ReadToEnd();
+                using (StreamReader streamReader = new StreamReader(ruta))
+                {
+                    return streamReader.ReadToEnd();
+                }                    
             }
             else
             {
@@ -24,11 +26,11 @@ namespace Ejercicio56
 
         }
 
-        public static void GuardarArchivo(string ruta, string nombre, bool append, string textoAGuardar)
+        public static void GuardarArchivo(string ruta, bool append, string textoAGuardar)
         {
-            if(Directory.Exists(ruta))
-            {
-                string rutaCompleta = ruta + nombre;
+         /*   if(Directory.Exists(ruta))
+            {*/
+                string rutaCompleta = ruta;
                 using (StreamWriter streamWriter = new StreamWriter(rutaCompleta, append))
                 {
                     string[] textoConSaltoLineaGuardar = textoAGuardar.Split('\n');
@@ -38,11 +40,11 @@ namespace Ejercicio56
                         streamWriter.WriteLine(palabra);
                     }
                 }                                
-            }
+            /*}
             else
             {
                 throw new DirectoryNotFoundException();
-            }
+            }*/
         }
 
     }
