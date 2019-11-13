@@ -57,7 +57,7 @@ namespace WindowsFormsApp2
             if (this.labelContador.InvokeRequired) //True si se encuentra en un subproceso
             {
                 //ESTO es para pasarlo como 'proceso ppal' para poder ingresar luego al else
-                Callback callback = new Callback(this.ActualizarLabel);
+                Callback callback = new Callback(this.ActualizarLabel); // this.ActualizarLabel;
                 this.labelContador.Invoke(callback);
             }
             else
