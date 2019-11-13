@@ -29,7 +29,8 @@ namespace Ejercicio56
         public static void GuardarArchivo(string ruta, bool append, string textoAGuardar)
         {
          /*   if(Directory.Exists(ruta))
-            {*/
+            {*/            
+
                 string rutaCompleta = ruta;
                 using (StreamWriter streamWriter = new StreamWriter(rutaCompleta, append))
                 {

@@ -38,6 +38,7 @@
             this.richTextBoxTexto = new System.Windows.Forms.RichTextBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip1.SuspendLayout();
             this.statusStripInformacion.SuspendLayout();
             this.SuspendLayout();
@@ -89,7 +90,8 @@
             // statusStripInformacion
             // 
             this.statusStripInformacion.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusInformacion});
+            this.toolStripStatusInformacion,
+            this.toolStripStatusLabel1});
             this.statusStripInformacion.Location = new System.Drawing.Point(0, 182);
             this.statusStripInformacion.Name = "statusStripInformacion";
             this.statusStripInformacion.Size = new System.Drawing.Size(463, 22);
@@ -114,6 +116,11 @@
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(0, 17);
             // 
             // Form1
             // 
@@ -146,6 +153,7 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusInformacion;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
     }
 }
 

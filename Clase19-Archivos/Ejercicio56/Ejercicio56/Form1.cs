@@ -11,7 +11,9 @@ using System.Windows.Forms;
 namespace Ejercicio56
 {
     public partial class Form1 : Form
-    {        
+    {
+        private string path;
+
         public Form1()
         {
             InitializeComponent();
@@ -20,7 +22,7 @@ namespace Ejercicio56
         private void richTextBox1_TextChanged(object sender, EventArgs e)
         {
             string cantidadCaracteres = (this.richTextBoxTexto.Text.Length).ToString();
-            this.toolStripStatusInformacion.Text = cantidadCaracteres;
+            this.toolStripStatusInformacion.Text = cantidadCaracteres;            
         }
 
         private void abrirToolStripMenuAbrir_Click(object sender, EventArgs e)
@@ -28,8 +30,9 @@ namespace Ejercicio56
             DialogResult resultado = this.openFileDialog1.ShowDialog();
             if(resultado==DialogResult.OK)
             {
-                string textoLeido = Archivador.LeerArchivo(openFileDialog1.FileName);
-                this.richTextBoxTexto.Text = textoLeido;
+                this.path = openFileDialog1.FileName;
+                string textoLeido = Archivador.LeerArchivo(path);
+                this.richTextBoxTexto.Text = textoLeido;                    
             }
             else
             {
@@ -39,27 +42,19 @@ namespace Ejercicio56
 
         private void guardarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
-            //Archivador.GuardarArchivo(this.openFileDialog1.FileName, , false, this.richTextBoxTexto.Text);
-            if(openFileDialog1.FileName!= "openFileDialog1")
+            if (this.path == null)
             {
-                Archivador.GuardarArchivo(openFileDialog1.FileName, false, this.richTextBoxTexto.Text);
-            }
-            else if(saveFileDialog1.FileName != "")
-            {
-                Archivador.GuardarArchivo(saveFileDialog1.FileName, false, this.richTextBoxTexto.Text);
+                this.GuardarComo();
             }
             else
             {
-                //Guardar como        
-                this.GuardarComo();
-            }            
-            
+                Archivador.GuardarArchivo(path, false, this.richTextBoxTexto.Text);
+            }
         }
 
         private void guardarComoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.GuardarComo();
+            this.GuardarComo();            
         }
         
         private void GuardarComo()
@@ -67,12 +62,12 @@ namespace Ejercicio56
             DialogResult resultado = this.saveFileDialog1.ShowDialog();
             if (resultado == DialogResult.OK)
             {
-                string textoGuardar = this.richTextBoxTexto.Text;
-                Archivador.GuardarArchivo(saveFileDialog1.FileName, false, textoGuardar);
+                this.path = this.saveFileDialog1.FileName;
+                Archivador.GuardarArchivo(path, false, this.richTextBoxTexto.Text);
             }
             else
             {
-                MessageBox.Show("No se guardo archivo");
+                MessageBox.Show("No selecciono archivo ni su nombre");
             }
         }
     }
