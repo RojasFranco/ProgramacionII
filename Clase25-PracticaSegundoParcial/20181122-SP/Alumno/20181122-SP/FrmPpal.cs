@@ -80,7 +80,7 @@ namespace _20181122_SP
 
         private void IniciarSimulacion()
         {
-            //this.FinalizarSimulacion();
+            this.FinalizarSimulacion();
             this.ProximaPatente(vistaPatente1);
             this.ProximaPatente(vistaPatente2);
         }
