@@ -14,21 +14,38 @@ namespace FormPersona
     public partial class FormPersona : Form
     {
         private Persona persona;
+        public event DelegadoString EventoForm;
+
 
         public FormPersona()
         {
             InitializeComponent();
         }
 
+        /*
+   d.  
+      iii. En ambos casos notificar al usuario siempre el nombre y el apellido de la persona 
+            utilizando el método Mostrar.  
+ */
         private void btnCrear_Click(object sender, EventArgs e)
         {
             if(persona==null)
-            {                
+            {
                 persona = new Persona();
+                persona.EventoString += NotificarCambio;
                 persona.Nombre = this.textBoxNombre.Text;
-                persona.Apellido = this.textBoxApellido.Text;                
+                persona.Apellido = this.textBoxApellido.Text;
+                this.btnCrear.Text = "Actualizar";
+                this.EventoForm.Invoke(string.Format("Se actualizo persona- {0}",persona.Mostrar()));                
+            }
+            else
+            {
+                persona.Nombre = this.textBoxNombre.Text;
+                persona.Apellido = this.textBoxApellido.Text;
+                this.EventoForm.Invoke(string.Format("Se actualizo persona- {0}", persona.Mostrar()));
             }
         }
+
 
         public static void NotificarCambio(string cambio)
         {
@@ -37,7 +54,9 @@ namespace FormPersona
 
         private void FormPersona_Load(object sender, EventArgs e)
         {
-            persona.EventoString += NotificarCambio;
+            //persona = new Persona();            
+            //persona.EventoString += NotificarCambio;            
+            this.EventoForm += NotificarCambio;
         }
     }
 }

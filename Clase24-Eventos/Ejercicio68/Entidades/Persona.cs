@@ -6,12 +6,11 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
+    public delegate void DelegadoString(string msg);
     public class Persona
     {
         private string apellido;
-        private string nombre;
-
-        public delegate void DelegadoString(string msg);
+        private string nombre;        
 
         public event DelegadoString EventoString;
 
@@ -22,7 +21,11 @@ namespace Entidades
             get { return this.apellido; }
             set
             {
-                this.apellido = value;                
+                this.apellido = value;
+                if (EventoString != null)
+                {
+                    EventoString.Invoke("Se creo apellido");
+                }
             }
         }
 
@@ -30,12 +33,12 @@ namespace Entidades
         {
             get { return this.nombre; }
             set
-            {
-                this.nombre = value;
+            {                
                 if(EventoString!=null)
                 {
                     EventoString.Invoke("Se creo nombre");
-                }                
+                }
+                this.nombre = value;
             }
         }
 
@@ -43,14 +46,14 @@ namespace Entidades
 
         public Persona()
         {
-            this.nombre = "Franco";
-            this.apellido = "Rojas";
+            //this.nombre = "Franco";
+            //this.apellido = "Rojas";
         }
 
         public string Mostrar()
         {
             StringBuilder sb = new StringBuilder();
-            sb.AppendFormat("Nombre: {0} - Apellido {0}\n", this.Nombre, this.Apellido);
+            sb.AppendFormat("Nombre: {0} - Apellido {1}\n", this.Nombre, this.Apellido);
 
             return sb.ToString();
         }

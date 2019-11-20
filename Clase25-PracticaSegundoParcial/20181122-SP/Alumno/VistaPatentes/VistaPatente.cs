@@ -18,8 +18,7 @@ namespace Patentes
 
     public partial class VistaPatente : UserControl
     {
-        public event FinExposicionPatente finExposicion;
-        public delegate void Callback(object patente);
+        public event FinExposicionPatente finExposicion;        
 
         public VistaPatente()
         {
@@ -48,7 +47,7 @@ namespace Patentes
 
                     // Agregar evento de que finalizó la exposición de la patente
                     // ALUMNO
-                    finExposicion.Invoke((VistaPatente)patente);
+                    finExposicion.Invoke(this);                    
                 }
                 catch (Exception) { }
             }

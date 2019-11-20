@@ -24,6 +24,7 @@ namespace Archivos
             using (StreamReader reader = new StreamReader(archivo))
             {
                 datos = new Queue<Patente>();
+
                 /*string lineasTotales = reader.ReadToEnd();
                 string[] leerDeAca = lineasTotales.Split('\n');
                                 foreach(string linea in leerDeAca)

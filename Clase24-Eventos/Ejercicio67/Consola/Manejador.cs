@@ -11,7 +11,7 @@ namespace Consola
 
         public static void Manejar()
         {
-            Console.WriteLine("Paso\n");
+            Console.WriteLine("Paso");
         }
     }
 }

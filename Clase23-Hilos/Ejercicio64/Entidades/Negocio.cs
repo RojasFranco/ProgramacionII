@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Entidades
@@ -46,7 +47,21 @@ namespace Entidades
         {
             //El método AsignarCaja deberá imprimir el mensaje "Asignando cajas..." cuando sea
             //invocado, recorrer la lista de clientes y asignar a cada cliente en la fila de la caja que menos
-            //clientes tenga en ese momento . Debera tardar 1 segundo
+            //clientes tenga en ese momento . Debera tardar 1 segundo            
+            Console.WriteLine("Asignando cajas...");
+            foreach (string cliente in this.Clientes)
+            {
+                if(this.caja1.FilaClientes.Count<this.caja2.FilaClientes.Count)
+                {                    
+                    this.Caja1.FilaClientes.Add(cliente);                    
+                }
+                else
+                {
+                    this.Caja2.FilaClientes.Add(cliente);
+                }
+                Thread.Sleep(1000);
+            }
+            Console.WriteLine("Se asignaron cajas");
         }
 
     }

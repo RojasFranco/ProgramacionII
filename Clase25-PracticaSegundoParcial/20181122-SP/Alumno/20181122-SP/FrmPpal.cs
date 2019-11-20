@@ -29,9 +29,10 @@ namespace _20181122_SP
         }
 
         private void FrmPpal_Load(object sender, EventArgs e)
-        {            
+        {
             this.vistaPatente1.finExposicion += ProximaPatente;
             this.vistaPatente2.finExposicion += ProximaPatente;
+        
         }
 
         public void ProximaPatente(VistaPatente vistaPatente)
