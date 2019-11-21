@@ -1,0 +1,92 @@
+Conectar Parametros:
+string conexion = @"Server =  .\SQLEXPRESS; DataBase = '____BASEDATOS'; Trusted_Connection = true;";
+SqlConnection connection = new SqlConnection(conexion);
+SqlCommand command = new SqlCommand();
+command.Connection = connection;
+command.CommandType = System.Data.CommandType.Text;
+
+Insertar:
+try
+{
+	conexion.Open();
+	string instruccion = "INSERT INTO 'NombreTabla' ('PARAMETROS') VALUES (@DATO1, @Dato2);";
+
+	command.CommandText = instruccion;
+	command.Parameters.AddWithValue("@DATO1", p.DireccionEntrega);                
+	command.Parameters.AddWithValue("@Dato2", p.TrackingID);
+	command.Parameters.AddWithValue("@datoAlumno", "'Franco Rojas'");
+	command.ExecuteNonQuery();
+	//O using (SqlConnection connection = new SqlConnection(conexion)) para no usar finally
+}
+
+catch(Exception errorEnCarga)
+{
+//	retorno = false;
+//	throw errorEnCarga;
+}
+finally
+{
+	if (conexion != null && conexion.State == System.Data.ConnectionState.Open)
+	{
+		conexion.Close();
+	}
+}
+
+Leer:
+try
+{
+	conexion.Open();
+	string instruccion = "SELECT ('PARAMETROS') FROM 'NOMBRE_TABLA';";
+	command.CommandText = instruccion;
+	SqlDataReader dataReader = command.ExecuteReader();
+	while(dataReader.Read())
+	{
+		int 'dat' = dataReader.GetInt(0);
+		string 'dato' = dataReader.GetString(1);
+		float 'datoQuePuedeSerNull'= null;
+		if(!dataReader.IsDBNull(2))
+		{
+			float = dataReader.GetFloat(2);
+		}
+	}
+}
+catch(Exception errorEnCarga)
+{
+//	retorno = false;
+//	throw errorEnCarga;
+}
+finally
+{
+	if (conexion != null && conexion.State == System.Data.ConnectionState.Open)
+	{
+		conexion.Close();
+	}
+}
+
+Modificar:
+try
+{
+	conexion.Open();
+	string instruccion = "UPDATE 'NOMBRE_TABLA' SET (NOMBRE = @nombre'PARAMETROS A CAMBIAR') WHERE 'P. EJ id=4';";
+
+	command.CommandText = instruccion;
+
+//P.Ej:	command.Parameters.AddWithValue("@nombre", this.nombre);               
+/* POSIBLES VALORES - CAMBIAR
+	command.Parameters.AddWithValue("@Dato2", p.TrackingID);
+	command.Parameters.AddWithValue("@datoAlumno", "'Franco Rojas'");
+*/
+	command.ExecuteNonQuery();
+}
+
+BORRAR:
+try
+{
+	conexion.Open();
+	string instruccion = "DELETE FROM 'NOMBRE_TABLA' WHERE 'p ej ID= @id(recib x param)';"
+	command.Parameters.AddWithValue("@id", id);
+	command.CommandText = instruccion;
+
+
+	command.ExecuteNonQuery();
+}

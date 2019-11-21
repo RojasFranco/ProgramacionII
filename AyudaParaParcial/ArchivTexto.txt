@@ -1,0 +1,25 @@
+Escritor
+try
+{
+	using (StreamWriter streamWriter = new StreamWriter('file_name', 'append'))
+	{
+	    streamWriter.WriteLine("ALGO");
+	}
+}
+catch(Exception err)
+{
+}
+
+Lector
+try
+{	using (StreamReader streamReader = new StreamReader('file_name'))
+	{
+		String line;	
+		while ((line = streamReader.ReadLine()) != null)
+		{	
+			Console.WriteLine(line);
+		}
+		//O string textoCompleto;
+		textoCompleto = streamReader.ReadToEnd();
+	}
+}

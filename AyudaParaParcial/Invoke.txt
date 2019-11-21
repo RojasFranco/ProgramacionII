@@ -1,0 +1,11 @@
+if (this.labelContador.InvokeRequired)
+{	
+	object[] parametros = new object[] { 'PARAMETRO RECIBIDO // QUE RECIBIBA EL METODO DEL DELEGADO'};
+	CallBack callBack = new CallBack('METODO sobre el que estoy Para llamarlo abajo')
+	this.labelContador.Invoke(callBack, parametros);
+}
+else
+{
+//lugar en donde quiero usarlo
+	this.labelContador.Text = (Convert.ToInt32(this.labelContador.Text) + (int)cantidadASaltar).ToString();
+}

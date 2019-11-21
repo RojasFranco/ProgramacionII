@@ -1,0 +1,27 @@
+Serializar:
+try
+{
+	XmlSerializer serializador = new XmlSerializer(typeof('TipoDato_____'));
+	using (XmlTextWriter writer = new XmlTextWriter('archivo_____', Encoding.UTF8))
+	{
+	serializador.Serialize(writer, 'datos________');
+	}
+}            
+catch(Exception exception)
+{
+	//
+}                             
+
+Deserializar:
+try
+{
+	XmlSerializer serializador = new XmlSerializer(typeof('TipoDato____'));
+	using (XmlTextReader reader = new XmlTextReader("url"))
+	{
+	datos = ('TipoDato____')(serializador.Deserialize(reader));
+	}
+}
+catch (Exception exception)
+{
+	//
+}
