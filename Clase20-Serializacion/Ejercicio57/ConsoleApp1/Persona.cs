@@ -75,9 +75,6 @@ namespace ConsoleApp1
         }
 
 
-
-
-
         #region Para leer
 
         public override string ToString()
